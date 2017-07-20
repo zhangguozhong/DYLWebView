@@ -21,6 +21,7 @@
 		2FA5A7751F207D06003BEA56 /* DYLJSContextHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA5A7741F207D06003BEA56 /* DYLJSContextHandler.m */; };
 		2FA5A7781F207DCD003BEA56 /* DYLWebViewDemoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA5A7771F207DCD003BEA56 /* DYLWebViewDemoController.m */; };
 		2FA5A77A1F2082D1003BEA56 /* nativehelper.js in Resources */ = {isa = PBXBuildFile; fileRef = 2FA5A7791F2082D1003BEA56 /* nativehelper.js */; };
+		2FA5A77E1F208E44003BEA56 /* UIView+DYLCurrentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA5A77D1F208E44003BEA56 /* UIView+DYLCurrentViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,8 @@
 		2FA5A7761F207DCD003BEA56 /* DYLWebViewDemoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYLWebViewDemoController.h; sourceTree = "<group>"; };
 		2FA5A7771F207DCD003BEA56 /* DYLWebViewDemoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYLWebViewDemoController.m; sourceTree = "<group>"; };
 		2FA5A7791F2082D1003BEA56 /* nativehelper.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = nativehelper.js; sourceTree = "<group>"; };
+		2FA5A77C1F208E44003BEA56 /* UIView+DYLCurrentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+DYLCurrentViewController.h"; sourceTree = "<group>"; };
+		2FA5A77D1F208E44003BEA56 /* UIView+DYLCurrentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+DYLCurrentViewController.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +104,7 @@
 		2FA5A73D1F207A3F003BEA56 /* DYLWebView */ = {
 			isa = PBXGroup;
 			children = (
+				2FA5A77B1F208E1D003BEA56 /* Categories */,
 				2FA5A76F1F207C8B003BEA56 /* Handler */,
 				2FA5A7681F207B75003BEA56 /* Progress */,
 				2FA5A7641F207AC9003BEA56 /* DYLWebView */,
@@ -174,6 +178,15 @@
 				2FA5A7741F207D06003BEA56 /* DYLJSContextHandler.m */,
 			);
 			path = Handler;
+			sourceTree = "<group>";
+		};
+		2FA5A77B1F208E1D003BEA56 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				2FA5A77C1F208E44003BEA56 /* UIView+DYLCurrentViewController.h */,
+				2FA5A77D1F208E44003BEA56 /* UIView+DYLCurrentViewController.m */,
+			);
+			path = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,6 +295,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2FA5A76B1F207B9A003BEA56 /* DYLWebViewProgress.m in Sources */,
+				2FA5A77E1F208E44003BEA56 /* UIView+DYLCurrentViewController.m in Sources */,
 				2FA5A7751F207D06003BEA56 /* DYLJSContextHandler.m in Sources */,
 				2FA5A7781F207DCD003BEA56 /* DYLWebViewDemoController.m in Sources */,
 				2FA5A7461F207A3F003BEA56 /* ViewController.m in Sources */,

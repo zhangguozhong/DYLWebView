@@ -33,6 +33,8 @@
     self.progressBarView = [[DYLWebViewProgressView alloc] initWithFrame:CGRectMake(0, [self isNavigationHidden]?0:64, self.view.frame.size.width, 2)];
     _progressBarView.progressColor = [UIColor greenColor];
     [self.view addSubview:_progressBarView];
+    
+    NSLog(@"VC -- %@", self);
 }
 
 - (void)didReceiveMemoryWarning {
