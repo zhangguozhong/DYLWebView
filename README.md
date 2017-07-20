@@ -1,3 +1,6 @@
 # DYLWebView
 兼容UIWebView与WKWebView
 
+1、兼容UIWebView与WKWebView的思路就是，制定一套统一的回调协议提供给UIWebView和WKWebView回调使用，再实现WebView的基础方法如loadRequest、reload等，以及提供js与native交互的管理类。
+
+2、解释本例的DYLScriptMessageHandler和DYLJSContextHandler，DYLJSContextHandler用于iOS7js与原生交互，在该类中实现相应的oc方法即可；DYLScriptMessageHandler，用于iOS8以上的设备js与原生交互使用，但具体执行的逻辑在scriptDelegate对象中。
