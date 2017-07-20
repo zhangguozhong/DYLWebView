@@ -11,6 +11,7 @@
 #import <JavaScriptCore/JavaScriptCore.h>
 #import "DYLWebViewProgress.h"
 #import "DYLJSContextHandler.h"
+#import "UIView+DYLCurrentViewController.h"
 
 @interface DYLWebView () <UIWebViewDelegate, DYLWebViewProgressDelegate, WKUIDelegate, WKNavigationDelegate>
 
@@ -167,7 +168,10 @@
     
     if (self.delegate && [self.delegate respondsToSelector:@selector(webViewDidFinishLoad:)]) {
         self.jsContext = [webView valueForKeyPath:@"documentView.webView.mainFrame.javaScriptContext"];
-        self.jsContext[@"test"] = [[DYLJSContextHandler alloc] init];
+        
+        UIViewController *weakTargetVC = [self viewForController];
+        NSLog(@"VC -- %@", weakTargetVC);
+        self.jsContext[@"NativeBridge"] = [[DYLJSContextHandler alloc] initWithWeakTarget:weakTargetVC];
         
         if (self.isAllowNativeHelperJS) {
             [self registerNativeHelperJS];
@@ -578,14 +582,15 @@
     }
 }
 
+
 #pragma mark - 清理
 - (void)dealloc {
     if (_usingUIWebView) {
-        UIWebView *webView = _realWebView;
+        UIWebView *webView = self.realWebView;
         webView.delegate = nil;
     }
     else {
-        WKWebView *wkWebView = _realWebView;
+        WKWebView *wkWebView = self.realWebView;
         wkWebView.UIDelegate = nil;
         wkWebView.navigationDelegate = nil;
         [self unregisterFromKVO];
