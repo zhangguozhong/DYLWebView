@@ -22,6 +22,7 @@
 		2FA5A7781F207DCD003BEA56 /* DYLWebViewDemoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA5A7771F207DCD003BEA56 /* DYLWebViewDemoController.m */; };
 		2FA5A77A1F2082D1003BEA56 /* nativehelper.js in Resources */ = {isa = PBXBuildFile; fileRef = 2FA5A7791F2082D1003BEA56 /* nativehelper.js */; };
 		2FA5A77E1F208E44003BEA56 /* UIView+DYLCurrentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA5A77D1F208E44003BEA56 /* UIView+DYLCurrentViewController.m */; };
+		2FB9F9091F20D873009DFDC3 /* UIWebView+DYLJavaScriptContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FB9F9081F20D873009DFDC3 /* UIWebView+DYLJavaScriptContext.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,8 @@
 		2FA5A7791F2082D1003BEA56 /* nativehelper.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = nativehelper.js; sourceTree = "<group>"; };
 		2FA5A77C1F208E44003BEA56 /* UIView+DYLCurrentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+DYLCurrentViewController.h"; sourceTree = "<group>"; };
 		2FA5A77D1F208E44003BEA56 /* UIView+DYLCurrentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+DYLCurrentViewController.m"; sourceTree = "<group>"; };
+		2FB9F9071F20D873009DFDC3 /* UIWebView+DYLJavaScriptContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+DYLJavaScriptContext.h"; sourceTree = "<group>"; };
+		2FB9F9081F20D873009DFDC3 /* UIWebView+DYLJavaScriptContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+DYLJavaScriptContext.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +188,8 @@
 			children = (
 				2FA5A77C1F208E44003BEA56 /* UIView+DYLCurrentViewController.h */,
 				2FA5A77D1F208E44003BEA56 /* UIView+DYLCurrentViewController.m */,
+				2FB9F9071F20D873009DFDC3 /* UIWebView+DYLJavaScriptContext.h */,
+				2FB9F9081F20D873009DFDC3 /* UIWebView+DYLJavaScriptContext.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -295,6 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2FA5A76B1F207B9A003BEA56 /* DYLWebViewProgress.m in Sources */,
+				2FB9F9091F20D873009DFDC3 /* UIWebView+DYLJavaScriptContext.m in Sources */,
 				2FA5A77E1F208E44003BEA56 /* UIView+DYLCurrentViewController.m in Sources */,
 				2FA5A7751F207D06003BEA56 /* DYLJSContextHandler.m in Sources */,
 				2FA5A7781F207DCD003BEA56 /* DYLWebViewDemoController.m in Sources */,
@@ -504,6 +510,7 @@
 				2FA5A75F1F207A3F003BEA56 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2FA5A7601F207A3F003BEA56 /* Build configuration list for PBXNativeTarget "DYLWebViewTests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +519,7 @@
 				2FA5A7621F207A3F003BEA56 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

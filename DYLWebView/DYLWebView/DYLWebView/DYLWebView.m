@@ -8,16 +8,16 @@
 
 #import "DYLWebView.h"
 #import <WebKit/WebKit.h>
-#import <JavaScriptCore/JavaScriptCore.h>
+#import "UIWebView+DYLJavaScriptContext.h"
 #import "DYLWebViewProgress.h"
 #import "DYLJSContextHandler.h"
 #import "UIView+DYLCurrentViewController.h"
 
-@interface DYLWebView () <UIWebViewDelegate, DYLWebViewProgressDelegate, WKUIDelegate, WKNavigationDelegate>
+@interface DYLWebView () <UIWebViewDelegate, DYLWebViewProgressDelegate, WKUIDelegate, WKNavigationDelegate, DYLJavaScriptContextDelegate>
 
 @property (strong, nonatomic) DYLWebViewProgress *webViewProgress;
 @property (nonatomic, assign) double estimatedProgress;
-@property (strong, nonatomic) JSContext *jsContext;
+@property (strong, nonatomic) JSContext *javaScriptContext;
 
 @property (copy, nonatomic, readwrite) NSString *title;
 @property (strong, nonatomic, readwrite) NSURLRequest *originalRequest;
@@ -167,12 +167,6 @@
     }
     
     if (self.delegate && [self.delegate respondsToSelector:@selector(webViewDidFinishLoad:)]) {
-        self.jsContext = [webView valueForKeyPath:@"documentView.webView.mainFrame.javaScriptContext"];
-        
-        UIViewController *weakTargetVC = [self viewForController];
-        NSLog(@"VC -- %@", weakTargetVC);
-        self.jsContext[@"NativeBridge"] = [[DYLJSContextHandler alloc] initWithWeakTarget:weakTargetVC];
-        
         if (self.isAllowNativeHelperJS) {
             [self registerNativeHelperJS];
         }
@@ -193,6 +187,13 @@
     } else {
         return YES;
     }
+}
+
+#pragma mark - 获取javaScriptContext
+- (void)webView:(UIWebView *)webView didCreateJavaScriptContext:(JSContext *)javaScriptContext {
+    self.javaScriptContext = javaScriptContext;
+    UIViewController *weakTargetVC = [self viewForController];
+    self.javaScriptContext[@"NativeBridge"] = [[DYLJSContextHandler alloc] initWithWeakTarget:weakTargetVC];
 }
 
 
@@ -510,7 +511,7 @@
 {
     if (_usingUIWebView)
     {
-        JSValue *jsValue = [self.jsContext evaluateScript:javaScriptString];
+        JSValue *jsValue = [self.javaScriptContext evaluateScript:javaScriptString];
         if (completionHandler) {
             completionHandler(jsValue, nil);
         }

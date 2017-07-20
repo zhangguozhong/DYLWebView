@@ -34,7 +34,7 @@
     _progressBarView.progressColor = [UIColor greenColor];
     [self.view addSubview:_progressBarView];
     
-    NSLog(@"VC -- %@", self);
+    NSLog(@"VC -- %@", _webView.realWebView);
 }
 
 - (void)didReceiveMemoryWarning {
