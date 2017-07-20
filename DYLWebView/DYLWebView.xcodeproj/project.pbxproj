@@ -1,0 +1,505 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2FA5A7401F207A3F003BEA56 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA5A73F1F207A3F003BEA56 /* main.m */; };
+		2FA5A7431F207A3F003BEA56 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA5A7421F207A3F003BEA56 /* AppDelegate.m */; };
+		2FA5A7461F207A3F003BEA56 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA5A7451F207A3F003BEA56 /* ViewController.m */; };
+		2FA5A7491F207A3F003BEA56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FA5A7471F207A3F003BEA56 /* Main.storyboard */; };
+		2FA5A74B1F207A3F003BEA56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FA5A74A1F207A3F003BEA56 /* Assets.xcassets */; };
+		2FA5A74E1F207A3F003BEA56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FA5A74C1F207A3F003BEA56 /* LaunchScreen.storyboard */; };
+		2FA5A7591F207A3F003BEA56 /* DYLWebViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA5A7581F207A3F003BEA56 /* DYLWebViewTests.m */; };
+		2FA5A7671F207AE9003BEA56 /* DYLWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA5A7661F207AE9003BEA56 /* DYLWebView.m */; };
+		2FA5A76B1F207B9A003BEA56 /* DYLWebViewProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA5A76A1F207B9A003BEA56 /* DYLWebViewProgress.m */; };
+		2FA5A76E1F207C0F003BEA56 /* DYLWebViewProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA5A76D1F207C0F003BEA56 /* DYLWebViewProgressView.m */; };
+		2FA5A7721F207CA6003BEA56 /* DYLScriptMessageHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA5A7711F207CA6003BEA56 /* DYLScriptMessageHandler.m */; };
+		2FA5A7751F207D06003BEA56 /* DYLJSContextHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA5A7741F207D06003BEA56 /* DYLJSContextHandler.m */; };
+		2FA5A7781F207DCD003BEA56 /* DYLWebViewDemoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA5A7771F207DCD003BEA56 /* DYLWebViewDemoController.m */; };
+		2FA5A77A1F2082D1003BEA56 /* nativehelper.js in Resources */ = {isa = PBXBuildFile; fileRef = 2FA5A7791F2082D1003BEA56 /* nativehelper.js */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2FA5A7551F207A3F003BEA56 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2FA5A7331F207A3F003BEA56 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2FA5A73A1F207A3F003BEA56;
+			remoteInfo = DYLWebView;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2FA5A73B1F207A3F003BEA56 /* DYLWebView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DYLWebView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FA5A73F1F207A3F003BEA56 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2FA5A7411F207A3F003BEA56 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		2FA5A7421F207A3F003BEA56 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		2FA5A7441F207A3F003BEA56 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		2FA5A7451F207A3F003BEA56 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		2FA5A7481F207A3F003BEA56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2FA5A74A1F207A3F003BEA56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2FA5A74D1F207A3F003BEA56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2FA5A74F1F207A3F003BEA56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2FA5A7541F207A3F003BEA56 /* DYLWebViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DYLWebViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FA5A7581F207A3F003BEA56 /* DYLWebViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DYLWebViewTests.m; sourceTree = "<group>"; };
+		2FA5A75A1F207A3F003BEA56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2FA5A7651F207AE9003BEA56 /* DYLWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYLWebView.h; sourceTree = "<group>"; };
+		2FA5A7661F207AE9003BEA56 /* DYLWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYLWebView.m; sourceTree = "<group>"; };
+		2FA5A7691F207B9A003BEA56 /* DYLWebViewProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYLWebViewProgress.h; sourceTree = "<group>"; };
+		2FA5A76A1F207B9A003BEA56 /* DYLWebViewProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYLWebViewProgress.m; sourceTree = "<group>"; };
+		2FA5A76C1F207C0F003BEA56 /* DYLWebViewProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYLWebViewProgressView.h; sourceTree = "<group>"; };
+		2FA5A76D1F207C0F003BEA56 /* DYLWebViewProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYLWebViewProgressView.m; sourceTree = "<group>"; };
+		2FA5A7701F207CA6003BEA56 /* DYLScriptMessageHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYLScriptMessageHandler.h; sourceTree = "<group>"; };
+		2FA5A7711F207CA6003BEA56 /* DYLScriptMessageHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYLScriptMessageHandler.m; sourceTree = "<group>"; };
+		2FA5A7731F207D06003BEA56 /* DYLJSContextHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYLJSContextHandler.h; sourceTree = "<group>"; };
+		2FA5A7741F207D06003BEA56 /* DYLJSContextHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYLJSContextHandler.m; sourceTree = "<group>"; };
+		2FA5A7761F207DCD003BEA56 /* DYLWebViewDemoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYLWebViewDemoController.h; sourceTree = "<group>"; };
+		2FA5A7771F207DCD003BEA56 /* DYLWebViewDemoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYLWebViewDemoController.m; sourceTree = "<group>"; };
+		2FA5A7791F2082D1003BEA56 /* nativehelper.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = nativehelper.js; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2FA5A7381F207A3F003BEA56 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2FA5A7511F207A3F003BEA56 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2FA5A7321F207A3F003BEA56 = {
+			isa = PBXGroup;
+			children = (
+				2FA5A73D1F207A3F003BEA56 /* DYLWebView */,
+				2FA5A7571F207A3F003BEA56 /* DYLWebViewTests */,
+				2FA5A73C1F207A3F003BEA56 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2FA5A73C1F207A3F003BEA56 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2FA5A73B1F207A3F003BEA56 /* DYLWebView.app */,
+				2FA5A7541F207A3F003BEA56 /* DYLWebViewTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2FA5A73D1F207A3F003BEA56 /* DYLWebView */ = {
+			isa = PBXGroup;
+			children = (
+				2FA5A76F1F207C8B003BEA56 /* Handler */,
+				2FA5A7681F207B75003BEA56 /* Progress */,
+				2FA5A7641F207AC9003BEA56 /* DYLWebView */,
+				2FA5A7631F207AB6003BEA56 /* DYLWebViewDemo */,
+				2FA5A7411F207A3F003BEA56 /* AppDelegate.h */,
+				2FA5A7421F207A3F003BEA56 /* AppDelegate.m */,
+				2FA5A7441F207A3F003BEA56 /* ViewController.h */,
+				2FA5A7451F207A3F003BEA56 /* ViewController.m */,
+				2FA5A7471F207A3F003BEA56 /* Main.storyboard */,
+				2FA5A74A1F207A3F003BEA56 /* Assets.xcassets */,
+				2FA5A74C1F207A3F003BEA56 /* LaunchScreen.storyboard */,
+				2FA5A74F1F207A3F003BEA56 /* Info.plist */,
+				2FA5A73E1F207A3F003BEA56 /* Supporting Files */,
+			);
+			path = DYLWebView;
+			sourceTree = "<group>";
+		};
+		2FA5A73E1F207A3F003BEA56 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2FA5A73F1F207A3F003BEA56 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2FA5A7571F207A3F003BEA56 /* DYLWebViewTests */ = {
+			isa = PBXGroup;
+			children = (
+				2FA5A7581F207A3F003BEA56 /* DYLWebViewTests.m */,
+				2FA5A75A1F207A3F003BEA56 /* Info.plist */,
+			);
+			path = DYLWebViewTests;
+			sourceTree = "<group>";
+		};
+		2FA5A7631F207AB6003BEA56 /* DYLWebViewDemo */ = {
+			isa = PBXGroup;
+			children = (
+				2FA5A7761F207DCD003BEA56 /* DYLWebViewDemoController.h */,
+				2FA5A7771F207DCD003BEA56 /* DYLWebViewDemoController.m */,
+			);
+			path = DYLWebViewDemo;
+			sourceTree = "<group>";
+		};
+		2FA5A7641F207AC9003BEA56 /* DYLWebView */ = {
+			isa = PBXGroup;
+			children = (
+				2FA5A7651F207AE9003BEA56 /* DYLWebView.h */,
+				2FA5A7661F207AE9003BEA56 /* DYLWebView.m */,
+				2FA5A7791F2082D1003BEA56 /* nativehelper.js */,
+			);
+			path = DYLWebView;
+			sourceTree = "<group>";
+		};
+		2FA5A7681F207B75003BEA56 /* Progress */ = {
+			isa = PBXGroup;
+			children = (
+				2FA5A7691F207B9A003BEA56 /* DYLWebViewProgress.h */,
+				2FA5A76A1F207B9A003BEA56 /* DYLWebViewProgress.m */,
+				2FA5A76C1F207C0F003BEA56 /* DYLWebViewProgressView.h */,
+				2FA5A76D1F207C0F003BEA56 /* DYLWebViewProgressView.m */,
+			);
+			path = Progress;
+			sourceTree = "<group>";
+		};
+		2FA5A76F1F207C8B003BEA56 /* Handler */ = {
+			isa = PBXGroup;
+			children = (
+				2FA5A7701F207CA6003BEA56 /* DYLScriptMessageHandler.h */,
+				2FA5A7711F207CA6003BEA56 /* DYLScriptMessageHandler.m */,
+				2FA5A7731F207D06003BEA56 /* DYLJSContextHandler.h */,
+				2FA5A7741F207D06003BEA56 /* DYLJSContextHandler.m */,
+			);
+			path = Handler;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2FA5A73A1F207A3F003BEA56 /* DYLWebView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2FA5A75D1F207A3F003BEA56 /* Build configuration list for PBXNativeTarget "DYLWebView" */;
+			buildPhases = (
+				2FA5A7371F207A3F003BEA56 /* Sources */,
+				2FA5A7381F207A3F003BEA56 /* Frameworks */,
+				2FA5A7391F207A3F003BEA56 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DYLWebView;
+			productName = DYLWebView;
+			productReference = 2FA5A73B1F207A3F003BEA56 /* DYLWebView.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2FA5A7531F207A3F003BEA56 /* DYLWebViewTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2FA5A7601F207A3F003BEA56 /* Build configuration list for PBXNativeTarget "DYLWebViewTests" */;
+			buildPhases = (
+				2FA5A7501F207A3F003BEA56 /* Sources */,
+				2FA5A7511F207A3F003BEA56 /* Frameworks */,
+				2FA5A7521F207A3F003BEA56 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2FA5A7561F207A3F003BEA56 /* PBXTargetDependency */,
+			);
+			name = DYLWebViewTests;
+			productName = DYLWebViewTests;
+			productReference = 2FA5A7541F207A3F003BEA56 /* DYLWebViewTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2FA5A7331F207A3F003BEA56 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = mannyi;
+				TargetAttributes = {
+					2FA5A73A1F207A3F003BEA56 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 9V3T8NLWMK;
+						ProvisioningStyle = Automatic;
+					};
+					2FA5A7531F207A3F003BEA56 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 9V3T8NLWMK;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 2FA5A73A1F207A3F003BEA56;
+					};
+				};
+			};
+			buildConfigurationList = 2FA5A7361F207A3F003BEA56 /* Build configuration list for PBXProject "DYLWebView" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2FA5A7321F207A3F003BEA56;
+			productRefGroup = 2FA5A73C1F207A3F003BEA56 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2FA5A73A1F207A3F003BEA56 /* DYLWebView */,
+				2FA5A7531F207A3F003BEA56 /* DYLWebViewTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2FA5A7391F207A3F003BEA56 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2FA5A74E1F207A3F003BEA56 /* LaunchScreen.storyboard in Resources */,
+				2FA5A77A1F2082D1003BEA56 /* nativehelper.js in Resources */,
+				2FA5A74B1F207A3F003BEA56 /* Assets.xcassets in Resources */,
+				2FA5A7491F207A3F003BEA56 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2FA5A7521F207A3F003BEA56 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2FA5A7371F207A3F003BEA56 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2FA5A76B1F207B9A003BEA56 /* DYLWebViewProgress.m in Sources */,
+				2FA5A7751F207D06003BEA56 /* DYLJSContextHandler.m in Sources */,
+				2FA5A7781F207DCD003BEA56 /* DYLWebViewDemoController.m in Sources */,
+				2FA5A7461F207A3F003BEA56 /* ViewController.m in Sources */,
+				2FA5A7671F207AE9003BEA56 /* DYLWebView.m in Sources */,
+				2FA5A7431F207A3F003BEA56 /* AppDelegate.m in Sources */,
+				2FA5A7401F207A3F003BEA56 /* main.m in Sources */,
+				2FA5A7721F207CA6003BEA56 /* DYLScriptMessageHandler.m in Sources */,
+				2FA5A76E1F207C0F003BEA56 /* DYLWebViewProgressView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2FA5A7501F207A3F003BEA56 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2FA5A7591F207A3F003BEA56 /* DYLWebViewTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2FA5A7561F207A3F003BEA56 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2FA5A73A1F207A3F003BEA56 /* DYLWebView */;
+			targetProxy = 2FA5A7551F207A3F003BEA56 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2FA5A7471F207A3F003BEA56 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2FA5A7481F207A3F003BEA56 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2FA5A74C1F207A3F003BEA56 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2FA5A74D1F207A3F003BEA56 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2FA5A75B1F207A3F003BEA56 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		2FA5A75C1F207A3F003BEA56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2FA5A75E1F207A3F003BEA56 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9V3T8NLWMK;
+				INFOPLIST_FILE = DYLWebView/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mannyi.DYLWebView;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		2FA5A75F1F207A3F003BEA56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9V3T8NLWMK;
+				INFOPLIST_FILE = DYLWebView/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mannyi.DYLWebView;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		2FA5A7611F207A3F003BEA56 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 9V3T8NLWMK;
+				INFOPLIST_FILE = DYLWebViewTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mannyi.DYLWebViewTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DYLWebView.app/DYLWebView";
+			};
+			name = Debug;
+		};
+		2FA5A7621F207A3F003BEA56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 9V3T8NLWMK;
+				INFOPLIST_FILE = DYLWebViewTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mannyi.DYLWebViewTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DYLWebView.app/DYLWebView";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2FA5A7361F207A3F003BEA56 /* Build configuration list for PBXProject "DYLWebView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2FA5A75B1F207A3F003BEA56 /* Debug */,
+				2FA5A75C1F207A3F003BEA56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2FA5A75D1F207A3F003BEA56 /* Build configuration list for PBXNativeTarget "DYLWebView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2FA5A75E1F207A3F003BEA56 /* Debug */,
+				2FA5A75F1F207A3F003BEA56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		2FA5A7601F207A3F003BEA56 /* Build configuration list for PBXNativeTarget "DYLWebViewTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2FA5A7611F207A3F003BEA56 /* Debug */,
+				2FA5A7621F207A3F003BEA56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2FA5A7331F207A3F003BEA56 /* Project object */;
+}
