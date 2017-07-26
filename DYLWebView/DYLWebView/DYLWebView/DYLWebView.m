@@ -12,6 +12,10 @@
 #import "DYLWebViewProgress.h"
 #import "DYLJSContextHandler.h"
 #import "UIView+DYLCurrentViewController.h"
+#import <KVOController/KVOController.h>
+
+#define kScreenWidth CGRectGetWidth([UIScreen mainScreen].bounds)
+#define kScreenHeight CGRectGetHeight([UIScreen mainScreen].bounds)
 
 @interface DYLWebView () <UIWebViewDelegate, DYLWebViewProgressDelegate, WKUIDelegate, WKNavigationDelegate, DYLJavaScriptContextDelegate>
 
@@ -31,8 +35,12 @@
 @synthesize realWebView = _realWebView;
 @synthesize scalesPageToFit = _scalesPageToFit;
 
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    return [self init];
+}
+
 - (instancetype)init {
-    return [self initWithFrame:CGRectMake(0, 0, CGRectGetWidth([UIScreen mainScreen].bounds), CGRectGetHeight([UIScreen mainScreen].bounds))];
+    return [self initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight)];
 }
 
 - (instancetype)initWithFrame:(CGRect)frame {
@@ -108,48 +116,31 @@
 }
 
 #pragma mark - KVO
-- (NSArray *)observableKeypaths {
-    return @[@"estimatedProgress", @"title"];
-}
-
-- (void)registerForKVO {
+- (void)registerForKVO
+{
     if ([_realWebView isKindOfClass:[NSClassFromString(@"WKWebView") class]]) {
-        for (NSString *keyPath in self.observableKeypaths) {
-            [(WKWebView *)_realWebView addObserver:self forKeyPath:keyPath options:NSKeyValueObservingOptionNew context:nil];
-        }
+        [self.KVOController observe:_realWebView keyPaths:@[@"estimatedProgress", @"title"] options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld block:^(id  _Nullable observer, id  _Nonnull object, NSDictionary<NSString *,id> * _Nonnull change) {
+            if ([NSThread isMainThread]) {
+                [self updateUIForWkWebViewForKeyPath:change[FBKVONotificationKeyPathKey] newValue:change[NSKeyValueChangeNewKey]];
+            }
+            else {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self updateUIForWkWebViewForKeyPath:change[FBKVONotificationKeyPathKey] newValue:change[NSKeyValueChangeNewKey]];
+                });
+            }
+        }];
     }
 }
 
-- (void)unregisterFromKVO {
-    if ([_realWebView isKindOfClass:[NSClassFromString(@"WKWebView") class]]) {
-        for (NSString *keyPath in self.observableKeypaths) {
-            [(WKWebView *)_realWebView removeObserver:self forKeyPath:keyPath];
-        }
-    }
-}
-
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
-    if ([self.observableKeypaths containsObject:keyPath]) {
-        if ([NSThread mainThread]) {
-            [self updateUIForWkWebView:object forKeyPath:keyPath];
-        } else {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self updateUIForWkWebView:object forKeyPath:keyPath];
-            });
-        }
-    } else {
-        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
-    }
-}
-
-- (void)updateUIForWkWebView:(WKWebView *)wkWebView forKeyPath:(NSString *)keyPath {
+- (void)updateUIForWkWebViewForKeyPath:(NSString *)keyPath newValue:(id)newValue
+{
     if ([keyPath isEqualToString:@"estimatedProgress"]) {
         if (self.delegate && [self.delegate respondsToSelector:@selector(webView:webViewProgress:)]) {
-            [self.delegate webView:self webViewProgress:wkWebView.estimatedProgress];
+            [self.delegate webView:self webViewProgress:[newValue floatValue]];
         }
     } else if ([keyPath isEqualToString:@"title"]) {
         if (self.delegate && [self.delegate respondsToSelector:@selector(webView:webViewForTitle:)]) {
-            [self.delegate webView:self webViewForTitle:wkWebView.title];
+            [self.delegate webView:self webViewForTitle:newValue];
         }
     }
 }
@@ -594,7 +585,6 @@
         WKWebView *wkWebView = self.realWebView;
         wkWebView.UIDelegate = nil;
         wkWebView.navigationDelegate = nil;
-        [self unregisterFromKVO];
     }
     
     [_realWebView scrollView].delegate = nil;

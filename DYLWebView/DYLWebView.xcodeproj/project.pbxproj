@@ -23,6 +23,8 @@
 		2FA5A77A1F2082D1003BEA56 /* nativehelper.js in Resources */ = {isa = PBXBuildFile; fileRef = 2FA5A7791F2082D1003BEA56 /* nativehelper.js */; };
 		2FA5A77E1F208E44003BEA56 /* UIView+DYLCurrentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA5A77D1F208E44003BEA56 /* UIView+DYLCurrentViewController.m */; };
 		2FB9F9091F20D873009DFDC3 /* UIWebView+DYLJavaScriptContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FB9F9081F20D873009DFDC3 /* UIWebView+DYLJavaScriptContext.m */; };
+		2FCBED061F283044007FC015 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FCBED051F283044007FC015 /* WebKit.framework */; };
+		5AACAA6EF57C38BBC49D09D9 /* libPods-DYLWebView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B4DA1DEBFB53492EAEF0629 /* libPods-DYLWebView.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B4DA1DEBFB53492EAEF0629 /* libPods-DYLWebView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DYLWebView.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FA5A73B1F207A3F003BEA56 /* DYLWebView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DYLWebView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FA5A73F1F207A3F003BEA56 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2FA5A7411F207A3F003BEA56 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -66,6 +69,9 @@
 		2FA5A77D1F208E44003BEA56 /* UIView+DYLCurrentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+DYLCurrentViewController.m"; sourceTree = "<group>"; };
 		2FB9F9071F20D873009DFDC3 /* UIWebView+DYLJavaScriptContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+DYLJavaScriptContext.h"; sourceTree = "<group>"; };
 		2FB9F9081F20D873009DFDC3 /* UIWebView+DYLJavaScriptContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+DYLJavaScriptContext.m"; sourceTree = "<group>"; };
+		2FCBED051F283044007FC015 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		48FC21E830E3531719081DF1 /* Pods-DYLWebView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DYLWebView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DYLWebView/Pods-DYLWebView.debug.xcconfig"; sourceTree = "<group>"; };
+		90CDFF1CEA971D6CAAE260FF /* Pods-DYLWebView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DYLWebView.release.xcconfig"; path = "Pods/Target Support Files/Pods-DYLWebView/Pods-DYLWebView.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +79,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FCBED061F283044007FC015 /* WebKit.framework in Frameworks */,
+				5AACAA6EF57C38BBC49D09D9 /* libPods-DYLWebView.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,12 +94,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		126E85DF58646E60FA554546 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				48FC21E830E3531719081DF1 /* Pods-DYLWebView.debug.xcconfig */,
+				90CDFF1CEA971D6CAAE260FF /* Pods-DYLWebView.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		133BBCF3C251DBCF5AF7374D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2FCBED051F283044007FC015 /* WebKit.framework */,
+				0B4DA1DEBFB53492EAEF0629 /* libPods-DYLWebView.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		2FA5A7321F207A3F003BEA56 = {
 			isa = PBXGroup;
 			children = (
 				2FA5A73D1F207A3F003BEA56 /* DYLWebView */,
 				2FA5A7571F207A3F003BEA56 /* DYLWebViewTests */,
 				2FA5A73C1F207A3F003BEA56 /* Products */,
+				126E85DF58646E60FA554546 /* Pods */,
+				133BBCF3C251DBCF5AF7374D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -201,9 +229,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2FA5A75D1F207A3F003BEA56 /* Build configuration list for PBXNativeTarget "DYLWebView" */;
 			buildPhases = (
+				9FCCE8EF6A2EDDAC925656D2 /* [CP] Check Pods Manifest.lock */,
 				2FA5A7371F207A3F003BEA56 /* Sources */,
 				2FA5A7381F207A3F003BEA56 /* Frameworks */,
 				2FA5A7391F207A3F003BEA56 /* Resources */,
+				75186A77E51C04759C8A086C /* [CP] Embed Pods Frameworks */,
+				9301E01D534F7863DB70FDC9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -293,6 +324,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		75186A77E51C04759C8A086C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DYLWebView/Pods-DYLWebView-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9301E01D534F7863DB70FDC9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DYLWebView/Pods-DYLWebView-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9FCCE8EF6A2EDDAC925656D2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2FA5A7371F207A3F003BEA56 /* Sources */ = {
@@ -443,6 +522,7 @@
 		};
 		2FA5A75E1F207A3F003BEA56 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 48FC21E830E3531719081DF1 /* Pods-DYLWebView.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 9V3T8NLWMK;
@@ -455,6 +535,7 @@
 		};
 		2FA5A75F1F207A3F003BEA56 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 90CDFF1CEA971D6CAAE260FF /* Pods-DYLWebView.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 9V3T8NLWMK;

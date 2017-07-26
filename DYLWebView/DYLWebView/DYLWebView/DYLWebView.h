@@ -48,7 +48,7 @@ typedef NS_ENUM(NSInteger, DYLWebViewNavigationType) {
 @property (strong, nonatomic, readonly) NSURLRequest *currentRequest;
 @property (strong, nonatomic, readonly) NSURL *URL;
 
-- (instancetype)initWithFrame:(CGRect)frame usingUIWebView:(BOOL)usingUIWebView;
+- (instancetype)initWithFrame:(CGRect)frame usingUIWebView:(BOOL)usingUIWebView NS_DESIGNATED_INITIALIZER;
 
 @property (assign, nonatomic) BOOL scalesPageToFit;
 ///预估网页加载进度
