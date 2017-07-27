@@ -47,8 +47,8 @@ static NSHashTable *globalWebViews = nil;
 
 + (id)allocWithZone:(struct _NSZone *)zone
 {
-    dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
+    static dispatch_once_t onceWebViewToken;
+    dispatch_once(&onceWebViewToken, ^{
         globalWebViews = [NSHashTable weakObjectsHashTable];
     });
     
