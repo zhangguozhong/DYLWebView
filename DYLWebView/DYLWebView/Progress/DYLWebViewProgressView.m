@@ -52,6 +52,10 @@
                 frame.size.width = 0;
                 _progressBarView.frame = frame;
             }
+            
+            if (_completionBlock) {
+                _completionBlock();
+            }
         }];
     }
     else {

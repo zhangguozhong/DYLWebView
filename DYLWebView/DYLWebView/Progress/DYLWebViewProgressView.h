@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^CompletionBlock)(void);
+
 @interface DYLWebViewProgressView : UIView
 
 @property (assign, nonatomic) float progress;
 @property (strong, nonatomic) UIColor *progressColor;
+
+@property (copy, nonatomic) CompletionBlock completionBlock;
 
 @end
