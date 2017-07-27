@@ -118,7 +118,8 @@
 #pragma mark - KVO
 - (void)registerForKVO
 {
-    if ([_realWebView isKindOfClass:[NSClassFromString(@"WKWebView") class]]) {
+    if ([_realWebView isKindOfClass:[NSClassFromString(@"WKWebView") class]])
+    {
         [self.KVOController observe:_realWebView keyPaths:@[@"estimatedProgress", @"title"] options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld block:^(id  _Nullable observer, id  _Nonnull object, NSDictionary<NSString *,id> * _Nonnull change) {
             if ([NSThread isMainThread]) {
                 [self updateUIForWkWebViewForKeyPath:change[FBKVONotificationKeyPathKey] newValue:change[NSKeyValueChangeNewKey]];
@@ -134,12 +135,15 @@
 
 - (void)updateUIForWkWebViewForKeyPath:(NSString *)keyPath newValue:(id)newValue
 {
-    if ([keyPath isEqualToString:@"estimatedProgress"]) {
-        if (self.delegate && [self.delegate respondsToSelector:@selector(webView:webViewProgress:)]) {
+    if ([keyPath isEqualToString:@"estimatedProgress"])
+    {
+        if ([self.delegate respondsToSelector:@selector(webView:webViewProgress:)]) {
             [self.delegate webView:self webViewProgress:[newValue floatValue]];
         }
-    } else if ([keyPath isEqualToString:@"title"]) {
-        if (self.delegate && [self.delegate respondsToSelector:@selector(webView:webViewForTitle:)]) {
+    }
+    else if ([keyPath isEqualToString:@"title"])
+    {
+        if ([self.delegate respondsToSelector:@selector(webView:webViewForTitle:)]) {
             [self.delegate webView:self webViewForTitle:newValue];
         }
     }
@@ -147,7 +151,7 @@
 
 #pragma mark - UIWebViewDelegate
 - (void)webViewDidStartLoad:(UIWebView *)webView {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(webViewDidStartLoad:)]) {
+    if ([self.delegate respondsToSelector:@selector(webViewDidStartLoad:)]) {
         [self.delegate webViewDidStartLoad:self];
     }
 }
@@ -157,7 +161,7 @@
         self.originalRequest = webView.request;
     }
     
-    if (self.delegate && [self.delegate respondsToSelector:@selector(webViewDidFinishLoad:)]) {
+    if ([self.delegate respondsToSelector:@selector(webViewDidFinishLoad:)]) {
         if (self.isAllowNativeHelperJS) {
             [self registerNativeHelperJS];
         }
@@ -167,13 +171,13 @@
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(webView:didFailLoadWithError:)]) {
+    if ([self.delegate respondsToSelector:@selector(webView:didFailLoadWithError:)]) {
         [self.delegate webView:self didFailLoadWithError:error];
     }
 }
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(webView:shouldStartLoadWithRequest:navigationType:)]) {
+    if ([self.delegate respondsToSelector:@selector(webView:shouldStartLoadWithRequest:navigationType:)]) {
         return [self.delegate webView:self shouldStartLoadWithRequest:request navigationType:(DYLWebViewNavigationType)navigationType];
     } else {
         return YES;
@@ -190,13 +194,13 @@
 
 #pragma mark - WKNavigationDelegate
 - (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(webViewDidStartLoad:)]) {
+    if ([self.delegate respondsToSelector:@selector(webViewDidStartLoad:)]) {
         [self.delegate webViewDidStartLoad:self];
     }
 }
 
 - (void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(webView:didFailLoadWithError:)]) {
+    if ([self.delegate respondsToSelector:@selector(webView:didFailLoadWithError:)]) {
         [self.delegate webView:self didFailLoadWithError:error];
     }
 }
@@ -205,14 +209,14 @@
     if (self.isAllowNativeHelperJS) {
         [self registerNativeHelperJS];
     }
-    if (self.delegate && [self.delegate respondsToSelector:@selector(webViewDidFinishLoad:)]) {
+    if ([self.delegate respondsToSelector:@selector(webViewDidFinishLoad:)]) {
         [self.delegate webViewDidFinishLoad:self];
     }
 }
 
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
     BOOL decision = YES;
-    if (self.delegate && [self.delegate respondsToSelector:@selector(webView:shouldStartLoadWithRequest:navigationType:)]) {
+    if ([self.delegate respondsToSelector:@selector(webView:shouldStartLoadWithRequest:navigationType:)]) {
         decision = [self.delegate webView:self shouldStartLoadWithRequest:navigationAction.request navigationType:(DYLWebViewNavigationType)navigationAction.navigationType];
     }
     
