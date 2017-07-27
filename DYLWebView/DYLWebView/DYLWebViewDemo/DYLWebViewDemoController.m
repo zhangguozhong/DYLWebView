@@ -27,7 +27,6 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     self.supportLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, [self isNavigationHidden]?10:74, CGRectGetWidth(self.view.bounds), 25)];
-    
     _supportLabel.font = [UIFont systemFontOfSize:14.0f];
     _supportLabel.textColor = [UIColor blackColor];
     _supportLabel.textAlignment = NSTextAlignmentCenter;
@@ -48,7 +47,6 @@
         weakSelf.supportLabel.text = @"该网页由XXX平台提供";
     };
     [self.view addSubview:_progressBarView];
-    
 }
 
 - (void)didReceiveMemoryWarning {
