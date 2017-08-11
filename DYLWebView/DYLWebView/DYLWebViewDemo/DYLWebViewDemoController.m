@@ -10,7 +10,7 @@
 #import "DYLWebView.h"
 #import "DYLWebViewProgressView.h"
 
-@interface DYLWebViewDemoController () <DYLWebViewDelegate, WKScriptMessageHandler>
+@interface DYLWebViewDemoController () <DYLWebViewDelegate, WKScriptMessageHandler, DYLWebViewProgressViewDelegate>
 
 @property (strong, nonatomic) DYLWebView *webView;
 @property (strong, nonatomic) DYLWebViewProgressView *progressBarView;
@@ -38,14 +38,9 @@
     
     [_webView.realWebView insertSubview:_supportLabel belowSubview:_webView.scrollView];
     
-    __weak typeof(self) weakSelf = self;
     self.progressBarView = [[DYLWebViewProgressView alloc] initWithFrame:CGRectMake(0, [self isNavigationHidden]?0:64, self.view.frame.size.width, 2)];
-    _progressBarView.progressColor = [UIColor greenColor];
-    
-    // progress到达1.0之后，会执行该block
-    _progressBarView.completionBlock = ^{
-        weakSelf.supportLabel.text = @"该网页由XXX平台提供";
-    };
+    self.progressBarView.progressColor = [UIColor greenColor];
+    self.progressBarView.delegate = self;
     [self.view addSubview:_progressBarView];
 }
 
@@ -105,6 +100,12 @@
 - (void)webView:(DYLWebView *)webView webViewForTitle:(NSString *)title
 {
     self.navigationItem.title = title;
+}
+
+#pragma mark - DYLWebViewProgressViewDelegate
+//DYLWebViewProgressView的progress=1.0后，会执行该方法
+- (void)webViewProgressViewDidFinishLoad:(DYLWebViewProgressView *)webViewProgressView {
+    self.supportLabel.text = @"该网页由XXX平台提供";
 }
 
 - (BOOL)isNavigationHidden
