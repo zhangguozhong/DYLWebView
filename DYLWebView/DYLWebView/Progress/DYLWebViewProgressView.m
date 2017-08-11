@@ -9,9 +9,7 @@
 #import "DYLWebViewProgressView.h"
 
 @interface DYLWebViewProgressView ()
-
 @property (strong, nonatomic) UIView *progressBarView;
-
 @end
 
 @implementation DYLWebViewProgressView
@@ -53,8 +51,8 @@
                 _progressBarView.frame = frame;
             }
             
-            if (_completionBlock) {
-                _completionBlock();
+            if ([self.delegate respondsToSelector:@selector(webViewProgressViewDidFinishLoad:)]) {
+                [self.delegate webViewProgressViewDidFinishLoad:self];
             }
         }];
     }
